@@ -18,6 +18,11 @@ export default function LandingPagesPage() {
       url: 'https://www.clareflow.io/',
       imageUrl: '/clareflow.png',
     },
+    {
+      title: 'Physique Revival',
+      url: 'https://physique-revival.com/',
+      imageUrl: '/pr_thumbnail.png',
+    },
   ];
 
   return (
