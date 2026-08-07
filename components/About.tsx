@@ -147,7 +147,7 @@ const experience: ExperienceEntry[] = [
     company: 'Clarewood Capital',
     period: 'May 2026 — Present',
     current: true,
-    logo: '/careflow_icon.webp',
+    logo: '/clarewood_capital_logo.png',
   },
   {
     role: 'GHL / Automation Specialist',
