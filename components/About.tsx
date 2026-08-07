@@ -122,7 +122,7 @@ const techStack: { category: string; skills: string[] }[] = [
   { category: 'AI', skills: ['OpenCode', 'ClaudeCode', 'Ollama', 'OpenRouter'] },
   { category: 'Frontend', skills: ['JavaScript', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Shadcn'] },
   { category: 'Backend', skills: ['Node.js', 'MySQL', 'MongoDB', 'OAuth', 'JWT', 'Express.js', 'REST'] },
-  { category: 'Others', skills: ['GitHub', 'Postman', 'Google Workspace', 'Mailgun', 'Domain & DNS Configuration'] },
+  { category: 'Others', skills: ['GitHub', 'Postman', 'Google Workspace', 'Domain & DNS Configuration'] },
 ];
 
 interface ExperienceEntry {
