@@ -18,7 +18,6 @@ export default function HomePage() {
               </div>
             </div>
             <p className="mt-4 text-center text-gray-600">
-             qweqweqweqweqweqweqweqweqweqweqweqweeqwqweqwe
             </p>
           </div>
         </section>
