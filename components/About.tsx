@@ -106,7 +106,7 @@ const services: Service[] = [
   },
   {
     title: 'Tracking & Analytics',
-    description: 'Meta Pixel, conversion tracking and analytics setup.',
+    description: 'CAPI, conversion tracking and analytics setup.',
     icon: (
       <>
         <path d="M3 3v18h18" />
@@ -118,7 +118,7 @@ const services: Service[] = [
 
 const techStack: { category: string; skills: string[] }[] = [
   { category: 'Automation', skills: ['n8n', 'GoHighLevel', 'Webhooks', 'API Systems'] },
-  { category: 'Marketing', skills: ['Meta Ads', 'Meta Pixel'] },
+  { category: 'Marketing', skills: ['Meta Ads'] },
   { category: 'AI', skills: ['OpenCode', 'ClaudeCode', 'Ollama', 'OpenRouter'] },
   { category: 'Frontend', skills: ['JavaScript', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Shadcn'] },
   { category: 'Backend', skills: ['Node.js', 'MySQL', 'MongoDB', 'OAuth', 'JWT', 'Express.js', 'REST'] },
