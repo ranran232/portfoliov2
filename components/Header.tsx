@@ -57,7 +57,7 @@ const Header = () => {
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
-            className="ml-3 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-gray-700 transition-colors duration-150 hover:bg-gray-50 focus:outline-none focus-visible:ring-2"
+            className="ml-3 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-gray-700 transition-colors duration-150 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 md:hidden"
             style={{ ['--tw-ring-color' as string]: ACCENT }}
           >
             <span className="relative block h-5 w-6">
