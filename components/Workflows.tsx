@@ -24,7 +24,7 @@ interface Video {
 
 const videos: Video[] = [
   {
-    id: 'campaign-structure',
+    id: '1',
     step: 1,
     title: 'Video Tracking Workflow',
     description:
@@ -33,7 +33,7 @@ const videos: Video[] = [
     loomId: '1fbeb11bf34142c68bab51b7ca6a9fff',
   },
   {
-    id: 'audience-segmentation',
+    id: '2',
     step: 2,
     title: 'Maintenance Subscription Workflow',
     description:
@@ -42,13 +42,22 @@ const videos: Video[] = [
     loomId: '04106ee3c0f542628147a14a06cf677a',
   },
   {
-    id: 'ad-copy-generator',
+    id: '3',
     step: 3,
     title: 'CAPI - Lead Event',
     description:
       'In this video, I demonstrate the Meta Conversion API workflow and verify that it is tracking CRM events correctly. I test the Lead, Scheduled, and Closed events by moving a contact through the pipeline, confirming that each event is successfully captured. Once configured, you can use the provided Dataset ID in your Meta Lead Ads setup to enable CRM event tracking and improve conversion reporting.',
     duration: '1:30',
     loomId: 'f53e828c9b4a4798ae7226c6a7d9e8ab',
+  },
+  {
+    id: '4',
+    step: 4,
+    title: 'How to Verify the Meta Instant Form Connection',
+    description:
+      'This video explains how to verify that your Meta Instant Form is properly connected to GoHighLevel. It shows how to use Meta’s Lead Ads Testing Tool to select the correct Facebook Page and form, check that Lead Access is properly configured, and confirm that Lead Connector is listed as the connected CRM. The video also demonstrates how to create a test lead and verify that the lead successfully flows into the CRM, either as a contact or an opportunity if an automation has been set up.',
+    duration: '1:29',
+    loomId: '1b781bee52f944b2ac2a2c98149c439c',
   },
 ];
 
