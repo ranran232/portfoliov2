@@ -194,7 +194,7 @@ export default function VideoLibrary() {
             className="my-6 text-2xl font-semibold text-gray-900 sm:text-3xl"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Automation workflow library
+             Workflows library
           </h1>
     
 
