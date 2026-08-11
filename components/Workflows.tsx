@@ -59,6 +59,15 @@ const videos: Video[] = [
     duration: '1:29',
     loomId: '1b781bee52f944b2ac2a2c98149c439c',
   },
+  {
+    id: '5',
+    step: 5,
+    title: 'Simple and Effective Lead Workflow Setup',
+    description:
+      'A simple and effective lead workflow for service businesses, covering lead capture, source tracking, automated follow-ups, appointment booking, reminders, and Meta Conversion API tracking to improve lead management and ad performance.',
+    duration: '1:29',
+    loomId: '7f3f097536454ea29a8bc091707eab9d',
+  },
 ];
 
 const ACCENT = '#4338CA';
