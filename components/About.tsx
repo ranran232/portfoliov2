@@ -143,15 +143,17 @@ const experience: ExperienceEntry[] = [
     logo: '/cenix_logo.jpg',
   },
   {
-  role: 'Automation Specialist',
-  company: 'Clarewood Capital',
-  period: 'December 2025 — July 2026',
-  logo: '/clarewood_capital_logo.png',
-},
+    role: 'Automation Specialist (part-time)',
+    company: 'Clarewood Capital',
+    period: 'May 2026 — Present',
+    current: true,
+    logo: '/clarewood_capital_logo.png',
+  },
   {
     role: 'GHL / Automation Specialist',
     company: 'Steady Auto Growth',
     period: 'June 2026 — Present',
+    current: true,
     logo: '/sag_logo.png',
   },
 ];
