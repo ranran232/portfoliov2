@@ -143,7 +143,7 @@ const experience: ExperienceEntry[] = [
     logo: '/cenix_logo.jpg',
   },
   {
-    role: 'Automation Specialist (part-time)',
+    role: 'Automation Specialist',
     company: 'Clarewood Capital',
     period: 'May 2026 — Present',
     current: true,
