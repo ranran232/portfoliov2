@@ -145,7 +145,7 @@ const experience: ExperienceEntry[] = [
   {
     role: 'Automation Specialist',
     company: 'Clarewood Capital',
-    period: 'May 2026 — Present',
+    period: 'Jan 2026 — June 2026',
     current: true,
     logo: '/clarewood_capital_logo.png',
   },

@@ -23,6 +23,24 @@ interface Video {
 }
 
 const videos: Video[] = [
+    {
+    id: '0',
+    step: 0,
+    title: 'Property Acquisition Automation with Custom Engine',
+    description:
+      'A property acquisition workflow that receives property information and attachments, processes them through a custom engine, and automatically creates and routes the property, opportunity, and evidence records. The video demonstrates the full flow from email intake to attachment storage and successful record creation.',
+    duration: '3:49',
+    loomId: '2db39d6d06dc4c43b69192cfade1fb87',
+  },
+  {
+    id: '0.1',
+    step: 0.1,
+    title: 'Handling WhatsApp Chunk Messages with AI Drafts',
+    description:
+      'A WhatsApp intake workflow that handles multiple message chunks, processes only the latest message, and routes the conversation through the custom engine. The video also demonstrates AI-generated draft responses for missing property information, allowing operators to review and approve replies before they are automatically sent through the original communication channel.',
+    duration: '3:10',
+    loomId: '2a18c96bb9d640799d9faadafe92b893',
+  },
   {
     id: '1',
     step: 1,
@@ -51,6 +69,15 @@ const videos: Video[] = [
     loomId: 'f53e828c9b4a4798ae7226c6a7d9e8ab',
   },
   {
+    id: '3.1',
+    step: 3.1,
+    title: 'Error Handling Workflow, Slack Notify at Recovery',
+    description:
+      'This workflow uses two components to handle errors: one logs failed executions and sends detailed Slack notifications, while the other allows recoverable executions to be manually retried after the issue is resolved. The video demonstrates triggering an error, receiving the notification, and successfully recovering the failed execution.',
+    duration: '1:57',
+    loomId: '10dbba9290194f2983b1034d80f6c8ae',
+  },
+  {
     id: '4',
     step: 4,
     title: 'How to Verify the Meta Instant Form Connection',
@@ -68,6 +95,16 @@ const videos: Video[] = [
     duration: '1:29',
     loomId: '7f3f097536454ea29a8bc091707eab9d',
   },
+  {
+    id: '6',
+    step: 6,
+    title: 'Message Approval and Batch Routing',
+    description:
+      'This workflow handles approved AI-generated messages by updating the approval records and sending the approved data back to the custom engine. It also demonstrates batch property routing, where multiple properties submitted together are separated and routed individually based on each property data.',
+    duration: '1:54',
+    loomId: '56d610a02e604d05817bb7834f1e68f6',
+  },
+
 ];
 
 const ACCENT = '#4338CA';
