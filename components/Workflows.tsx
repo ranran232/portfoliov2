@@ -25,7 +25,7 @@ interface Video {
 const videos: Video[] = [
     {
     id: '0',
-    step: 0,
+    step: 1,
     title: 'Property Acquisition Automation with Custom Engine',
     description:
       'A property acquisition workflow that receives property information and attachments, processes them through a custom engine, and automatically creates and routes the property, opportunity, and evidence records. The video demonstrates the full flow from email intake to attachment storage and successful record creation.',
@@ -34,7 +34,7 @@ const videos: Video[] = [
   },
   {
     id: '0.1',
-    step: 0.1,
+    step: 2,
     title: 'Handling WhatsApp Chunk Messages with AI Drafts',
     description:
       'A WhatsApp intake workflow that handles multiple message chunks, processes only the latest message, and routes the conversation through the custom engine. The video also demonstrates AI-generated draft responses for missing property information, allowing operators to review and approve replies before they are automatically sent through the original communication channel.',
@@ -43,7 +43,7 @@ const videos: Video[] = [
   },
   {
     id: '1',
-    step: 1,
+    step: 3,
     title: 'Video Tracking Workflow',
     description:
       "This video demonstrates a custom video tracking workflow for a coaching business. When a lead books an appointment, they are redirected to a Thank You page containing a welcome video and pre-call videos. As the lead reaches each viewing milestone, the workflow sends the data to GoHighLevel, updates the contact's watch progress, and logs the activity in Google Sheets for easy tracking and reporting.",
@@ -52,7 +52,7 @@ const videos: Video[] = [
   },
   {
     id: '2',
-    step: 2,
+    step: 4,
     title: 'Maintenance Subscription Workflow',
     description:
       'In this video, I walk through the completed maintenance membership workflow, including the products, payment links, booking calendars, and automated credit system. When a customer makes a payment, credits are added to their CRM account, they are redirected to the appropriate booking calendar, and receive a confirmation SMS with their available balance. Before confirming a booking, the workflow validates whether the customer has enough credits. If the balance is insufficient, the booking is automatically cancelled and the customer is notified with their remaining balance. For successful bookings, the appropriate credit amount is automatically deducted based on the selected service.',
@@ -61,7 +61,7 @@ const videos: Video[] = [
   },
   {
     id: '3',
-    step: 3,
+    step: 5,
     title: 'CAPI - Lead Event',
     description:
       'In this video, I demonstrate the Meta Conversion API workflow and verify that it is tracking CRM events correctly. I test the Lead, Scheduled, and Closed events by moving a contact through the pipeline, confirming that each event is successfully captured. Once configured, you can use the provided Dataset ID in your Meta Lead Ads setup to enable CRM event tracking and improve conversion reporting.',
@@ -70,7 +70,7 @@ const videos: Video[] = [
   },
   {
     id: '3.1',
-    step: 3.1,
+    step: 6,
     title: 'Error Handling Workflow, Slack Notify and Recovery',
     description:
       'This workflow uses two components to handle errors: one logs failed executions and sends detailed Slack notifications, while the other allows recoverable executions to be manually retried after the issue is resolved. The video demonstrates triggering an error, receiving the notification, and successfully recovering the failed execution.',
@@ -79,7 +79,7 @@ const videos: Video[] = [
   },
   {
     id: '4',
-    step: 4,
+    step: 7,
     title: 'How to Verify the Meta Instant Form Connection',
     description:
       'This video explains how to verify that your Meta Instant Form is properly connected to GoHighLevel. It shows how to use Meta’s Lead Ads Testing Tool to select the correct Facebook Page and form, check that Lead Access is properly configured, and confirm that Lead Connector is listed as the connected CRM. The video also demonstrates how to create a test lead and verify that the lead successfully flows into the CRM, either as a contact or an opportunity if an automation has been set up.',
@@ -88,16 +88,16 @@ const videos: Video[] = [
   },
   {
     id: '5',
-    step: 5,
+    step: 8,
     title: 'Simple and Effective Lead Workflow Setup',
     description:
       'A simple and effective lead workflow for service businesses, covering lead capture, source tracking, automated follow-ups, appointment booking, reminders, and Meta Conversion API tracking to improve lead management and ad performance.',
-    duration: '1:29',
+    duration: '1:47',
     loomId: '7f3f097536454ea29a8bc091707eab9d',
   },
   {
     id: '6',
-    step: 6,
+    step: 9,
     title: 'Message Approval and Batch Routing',
     description:
       'This workflow handles approved AI-generated messages by updating the approval records and sending the approved data back to the custom engine. It also demonstrates batch property routing, where multiple properties submitted together are separated and routed individually based on each property data.',
@@ -262,7 +262,7 @@ export default function VideoLibrary() {
                   className={`${mono.className} shrink-0 rounded-full px-2.5 py-1 text-xs font-medium`}
                   style={{ background: ACCENT_SOFT, color: ACCENT }}
                 >
-                  Step {selected.step} of {videos.length}
+                 Video {selected.step} of {videos.length}
                 </span>
               </div>
               {selected.description && <ExpandableDescription key={selected.id} text={selected.description} />}
