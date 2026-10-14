@@ -71,7 +71,7 @@ const videos: Video[] = [
   {
     id: '3.1',
     step: 3.1,
-    title: 'Error Handling Workflow, Slack Notify at Recovery',
+    title: 'Error Handling Workflow, Slack Notify and Recovery',
     description:
       'This workflow uses two components to handle errors: one logs failed executions and sends detailed Slack notifications, while the other allows recoverable executions to be manually retried after the issue is resolved. The video demonstrates triggering an error, receiving the notification, and successfully recovering the failed execution.',
     duration: '1:57',
