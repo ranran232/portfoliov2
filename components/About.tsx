@@ -1,6 +1,8 @@
+"use client"
 import { Space_Grotesk, Inter, IBM_Plex_Mono } from 'next/font/google';
 import type { ReactNode } from 'react';
 import CompanyLogo from './CompanyLogo';
+import { useEffect, useState } from 'react';
 
 const display = Space_Grotesk({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-display' });
 const body = Inter({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-body' });
@@ -135,6 +137,7 @@ interface ExperienceEntry {
 
 // Drop a square logo (e.g. 80x80+) in /public/logos and point each entry at
 // it. Entries without a `logo` fall back to the company's initials.
+
 const experience: ExperienceEntry[] = [
   {
     role: 'Full Stack Developer / Automation',
@@ -145,18 +148,24 @@ const experience: ExperienceEntry[] = [
   {
     role: 'Automation Specialist',
     company: 'Clarewood Capital',
-    period: 'Jan 2026 — June 2026',
-    current: true,
+    period: 'Jan 2026 — Jun 2026',
     logo: '/clarewood_capital_logo.png',
   },
   {
     role: 'GHL / Automation Specialist',
     company: 'Steady Auto Growth',
-    period: 'June 2026 — Present',
+    period: 'Jun 2026 — Sep 2026',
+    logo: '/sag_logo.png',
+  },
+  {
+    role: 'Account Manager',
+    company: 'Steady Auto Growth',
+    period: 'Oct 2026 — Present',
     current: true,
     logo: '/sag_logo.png',
   },
 ];
+
 
 // ---------------------------------------------------------------------------
 // Small building blocks
@@ -190,15 +199,179 @@ function SocialIcon({ icon }: { icon: 'linkedin' | 'github' }) {
   );
 }
 
+function AnimatedCounter({
+  target,
+  duration = 1800,
+}: {
+  target: number;
+  duration?: number;
+}) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let frameId: number;
+    const startTime = performance.now();
+
+    const animate = (currentTime: number) => {
+      const progress = Math.min(
+        (currentTime - startTime) / duration,
+        1
+      );
+
+      // Ease-out animation
+      const eased = 1 - Math.pow(1 - progress, 3);
+
+      setCount(Math.min(target, Math.floor(eased * target)));
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(animate);
+      } else {
+        setCount(target);
+      }
+    };
+
+    frameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(frameId);
+  }, [target, duration]);
+
+  return <>{count}+</>;
+}
+
 // ---------------------------------------------------------------------------
 // Section
 // ---------------------------------------------------------------------------
 export default function AboutSection() {
-  return (
+  return (    
     <section
       className={`${display.variable} ${body.variable} ${mono.variable} bg-white py-5 md:py-10`}
       style={{ fontFamily: 'var(--font-body)' }}
     >
+<div className="mx-auto mb-10 max-w-7xl px-4 sm:px-6 lg:px-8">
+  <h3
+    className="mt-1 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl"
+    style={{ fontFamily: 'var(--font-display)' }}
+  >
+    Work That Delivers{' '}
+    <span style={{ color: '#4338CA' }}>Results.</span>
+  </h3>
+
+  <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
+    {/* Workflows */}
+    <div
+      className="rounded-xl border p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:p-5"
+      style={{ background: '#EEF2FF', borderColor: '#E0E7FF' }}
+    >
+      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#4338CA"
+          strokeWidth="1.8"
+          className="h-5 w-5"
+          aria-hidden="true"
+        >
+          <rect x="3" y="3" width="7" height="7" rx="1.5" />
+          <rect x="14" y="14" width="7" height="7" rx="1.5" />
+          <path d="M10 6.5h2a2 2 0 0 1 2 2V14M14 17.5h-2a2 2 0 0 1-2-2V10" />
+        </svg>
+      </div>
+
+      <p
+        className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl"
+        style={{ color: '#4338CA' }}
+      >
+        <AnimatedCounter target={100} />
+      </p>
+
+      <h4 className="mt-1 text-sm font-semibold text-gray-900">
+        Workflows Built
+      </h4>
+
+      <p className="mt-1 text-xs leading-5 text-gray-600">
+        Automated business processes and systems.
+      </p>
+    </div>
+
+    {/* Websites */}
+    <div
+      className="rounded-xl border p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:p-5"
+      style={{ background: '#EEF2FF', borderColor: '#E0E7FF' }}
+    >
+      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#4338CA"
+          strokeWidth="1.8"
+          className="h-5 w-5"
+          aria-hidden="true"
+        >
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <path d="M3 9h18M7 6.5h.01M10 6.5h.01M8 13h4M8 16h8" />
+        </svg>
+      </div>
+
+      <p
+        className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl"
+        style={{ color: '#4338CA' }}
+      >
+        <AnimatedCounter target={30} />
+      </p>
+
+      <h4 className="mt-1 text-sm font-semibold text-gray-900">
+        Websites &amp; Landing Pages
+      </h4>
+
+      <p className="mt-1 text-xs leading-5 text-gray-600">
+        Websites and landing pages designed and built.
+      </p>
+    </div>
+
+    {/* A2P approvals */}
+    <div
+      className="rounded-xl border p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:p-5"
+      style={{ background: '#EEF2FF', borderColor: '#E0E7FF' }}
+    >
+      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#4338CA"
+          strokeWidth="1.8"
+          className="h-5 w-5"
+          aria-hidden="true"
+        >
+          <path d="M12 3 19 6v5c0 4.5-3 7.5-7 10-4-2.5-7-5.5-7-10V6l7-3Z" />
+          <path
+            d="m8.5 12 2.3 2.3 4.7-4.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      <p
+        className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl"
+        style={{ color: '#4338CA' }}
+      >
+        <AnimatedCounter target={100} />
+      </p>
+
+      <h4 className="mt-1 text-sm font-semibold text-gray-900">
+        A2P 10DLC Files Approved
+      </h4>
+
+      <p className="mt-1 text-xs leading-5 text-gray-600">
+        A2P registration submissions successfully approved.
+      </p>
+    </div>
+  </div>
+</div>
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Intro */}
         <div className="max-w-2xl">
@@ -284,42 +457,185 @@ export default function AboutSection() {
         </div>
 
         {/* Experience */}
-        <div className="mt-10 border-t border-gray-100 pt-10">
-          <Eyebrow>Experience</Eyebrow>
-          <h3 className="mt-1 text-xl font-semibold text-gray-900 sm:text-2xl" style={{ fontFamily: 'var(--font-display)' }}>
-            Where I&apos;ve Worked
-          </h3>
+<div
+  className="my-8 pt-8"
+>
+  <Eyebrow>Experience</Eyebrow>
 
-          <div className="relative mt-6 max-w-2xl">
-            <ul className="space-y-1">
-              {experience.map((entry, i) => {
-                const isLast = i === experience.length - 1;
-                return (
-                  <li key={`${entry.role}-${entry.company}`} className="relative flex gap-4">
-                    {/* Logo + connector */}
-                    <div className="flex flex-col items-center">
-                      <CompanyLogo logo={entry.logo} company={entry.company} />
-                      {!isLast && <span className="my-1 w-px flex-1 border-l border-dashed border-gray-200" />}
-                    </div>
+  <h3
+    className="mt-1 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl"
+    style={{ fontFamily: 'var(--font-display)' }}
+  >
+    Where I&apos;ve{' '}
+    <span style={{ color: '#4338CA' }}>Worked</span>
+  </h3>
 
-                    {/* Content */}
-                    <div className={isLast ? 'flex-1 pb-1' : 'flex-1 pb-7'}>
-                      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <h4 className="text-[15px] font-semibold text-gray-900" style={{ fontFamily: 'var(--font-display)' }}>
-                            {entry.role}
-                          </h4>
-                        </div>
-                        <span className={`${mono.className} text-xs text-gray-400`}>{entry.period}</span>
+  <p className="mt-1.5 text-sm text-gray-600">
+    A journey of building, automating, and growing businesses.
+  </p>
+
+  <div className="relative mt-6">
+    {/* Timeline connector */}
+    <div
+      className="absolute bottom-5 left-[10px] top-5 w-0.5 sm:left-[11px]"
+      style={{
+        background: 'linear-gradient(to bottom, #4338CA, #A5B4FC)',
+      }}
+    />
+
+    <ul className="space-y-4">
+      {[...experience].reverse().map((entry) => {
+        const isCurrent = entry.current === true;
+
+        return (
+          <li
+            key={`${entry.role}-${entry.company}`}
+            className="relative flex gap-3 sm:gap-4"
+          >
+            {/* Smaller timeline marker */}
+            <div className="relative z-10 flex shrink-0 justify-center pt-6">
+              <span
+                className="flex h-5 w-5 items-center justify-center rounded-full border-2 border-white"
+                style={{
+                  background: isCurrent ? '#4338CA' : '#A5B4FC',
+                  boxShadow: isCurrent
+                    ? '0 0 0 2px #C7D2FE'
+                    : '0 0 0 1px #E0E7FF',
+                }}
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-white" />
+              </span>
+            </div>
+
+            {/* Experience card */}
+            <div
+              className="min-w-0 flex-1 rounded-xl border p-3.5 transition-all duration-200 sm:p-4"
+              style={{
+                background: '#FFFFFF',
+                borderColor: isCurrent ? '#818CF8' : '#DCE3F5',
+                boxShadow: isCurrent
+                  ? '0 4px 18px rgba(67, 56, 202, 0.10)'
+                  : '0 2px 8px rgba(31, 41, 55, 0.03)',
+              }}
+            >
+              {/* Current badge */}
+              {isCurrent && (
+                <div className="mb-2">
+                  <span
+                    className="inline-flex rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white"
+                    style={{ background: '#4338CA' }}
+                  >
+                    Current
+                  </span>
+                </div>
+              )}
+
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
+                {/* Company logo */}
+                <div className="flex shrink-0 items-center">
+                  <div
+                    className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl border sm:h-16 sm:w-16"
+                    style={{
+                      background: '#FFFFFF',
+                      borderColor: '#E0E7FF',
+                    }}
+                  >
+                    <CompanyLogo
+                      logo={entry.logo}
+                      company={entry.company}
+                    />
+                  </div>
+                </div>
+
+                {/* Role details */}
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h4
+                          className="text-sm font-bold leading-snug text-gray-900 sm:text-base"
+                          style={{
+                            fontFamily: 'var(--font-display)',
+                          }}
+                        >
+                          {entry.role}
+                        </h4>
+
+                        {/* Promotion badge */}
+                        {entry.role === 'Account Manager' && (
+                          <span
+                            className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide"
+                            style={{
+                              background: '#E0E7FF',
+                              color: '#4338CA',
+                            }}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              className="h-3 w-3"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M12 19V5M5 12l7-7 7 7"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                            Promoted
+                          </span>
+                        )}
                       </div>
-                      <p className="mt-0.5 text-sm text-gray-500">{entry.company}</p>
+
+                      <p
+                        className="mt-1 text-sm font-semibold"
+                        style={{ color: '#4338CA' }}
+                      >
+                        {entry.company}
+                      </p>
                     </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
+
+                    {/* Employment period */}
+                    <div
+                      className={`${mono.className} flex shrink-0 items-center gap-1.5 text-[11px] text-gray-500 sm:text-xs`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        className="h-4 w-4 shrink-0"
+                        style={{ color: '#4338CA' }}
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="3"
+                          y="5"
+                          width="18"
+                          height="16"
+                          rx="2"
+                        />
+                        <path d="M16 3v4M8 3v4M3 10h18" />
+                      </svg>
+
+                      <span>{entry.period}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</div>
+
+
       </div>
     </section>
   );
